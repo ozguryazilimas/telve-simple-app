@@ -11,7 +11,6 @@ import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
-import org.picketlink.annotations.PicketLink;
 
 /**
  * Entity Manager üreticisi
@@ -23,24 +22,9 @@ public class EntityManagerProducer {
     @PersistenceContext( type = PersistenceContextType.EXTENDED, unitName = "telve")
     private EntityManager em;
 
-    @PersistenceContext(unitName = "picketlink")
-    private EntityManager emp;
-
     @Produces
     public EntityManager getEntityManager() {
         return em;
     }
 
-    /*
-    public void close(@Disposes final EntityManager entityManager) {
-        if( entityManager.isOpen() ){
-            entityManager.close();
-        }
-    }*/
-    
-    @Produces
-    @PicketLink
-    private EntityManager getpicketLinkEntityManager() {
-        return emp;
-    }
 }
