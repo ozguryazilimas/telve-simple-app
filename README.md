@@ -1,4 +1,4 @@
 Simple Telve Application
 =========================
 
-Thi sapplication is a simple demonstaration of Telve
+This application is a simple demonstration of Telve Framework
