@@ -5,7 +5,7 @@
     <parent>
         <artifactId>telve-parent</artifactId>
         <groupId>com.ozguryazilim.mutfak</groupId>
-        <version>4.0.0.Beta5</version>
+        <version>4.0.0.Beta6-SNAPSHOT</version>
     </parent>
 
 
@@ -18,7 +18,7 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.telve>4.0.0.Beta5</version.telve>
+        <version.telve>4.0.0.Beta6-SNAPSHOT</version.telve>
         <app.title>Telve-Simple</app.title>
         <project.stage>Test</project.stage>
     </properties>
