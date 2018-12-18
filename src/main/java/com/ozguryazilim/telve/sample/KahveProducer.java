@@ -7,15 +7,10 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 import javax.sql.DataSource;
 
-/**
- * Kahve için resource producer.
- * 
- * @author Hakan Uygun
- */
 @ApplicationScoped
 public class KahveProducer {
    
-    @Resource(mappedName = "java:jboss/datasources/TelveDS" )
+    @Resource(mappedName = "java:jboss/datasources/SimpleAppDS" )
     private DataSource dataSource;
     
     @Produces

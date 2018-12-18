@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>telve-parent</artifactId>
-        <groupId>com.ozguryazilim.mutfak</groupId>
-        <version>4.0.0.Beta6-SNAPSHOT</version>
+        <groupId>com.ozguryazilim.telve</groupId>
+        <artifactId>telve-app-parent</artifactId>
+        <version>4.0.0-Beta-11</version>
     </parent>
 
 
@@ -18,7 +18,6 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.telve>4.0.0.Beta6-SNAPSHOT</version.telve>
         <app.title>Telve-Simple</app.title>
         <project.stage>Test</project.stage>
     </properties>
@@ -26,21 +25,18 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.ozguryazilim.mutfak</groupId>
+            <groupId>com.ozguryazilim.telve</groupId>
             <artifactId>telve-web</artifactId>
-            <version>${version.telve}</version>
             <type>war</type>
         </dependency>
         <dependency>
-            <groupId>com.ozguryazilim.mutfak</groupId>
+            <groupId>com.ozguryazilim.telve</groupId>
             <artifactId>telve-idm</artifactId>
-            <version>${version.telve}</version>
             <type>ejb</type>
         </dependency>
         <dependency>
-            <groupId>com.ozguryazilim.mutfak</groupId>
+            <groupId>com.ozguryazilim.telve</groupId>
             <artifactId>telve-idm-model</artifactId>
-            <version>${version.telve}</version>
             <type>jar</type>
         </dependency>
 
@@ -72,7 +68,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>2.3</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                     <archive>
@@ -83,46 +78,7 @@
                     </archive>
                 </configuration>
             </plugin>
+            <plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>mysql</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</hibernate.dialect>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>Development</id>
-            <properties>
-                <project.stage>Development</project.stage>
-                <hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</hibernate.dialect>
-            </properties>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-war-plugin</artifactId>
-                        <version>2.3</version>
-                        <configuration>
-                            <webappDirectory>${basedir}/target/deployments/openohsce.war</webappDirectory>
-                            <failOnMissingWebXml>false</failOnMissingWebXml>
-                            <archive>
-                                <index>true</index>
-                                <manifest>
-                                    <addClasspath>true</addClasspath>
-                                </manifest>
-                            </archive>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
 </project>

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.ozguryazilim.telve.sample;
 
 import java.sql.SQLException;
@@ -23,7 +19,7 @@ import liquibase.resource.ResourceAccessor;
 @ApplicationScoped
 public class LiquibaseProducer {
 
-    @Resource(mappedName = "java:jboss/datasources/TelveDS" )
+    @Resource(mappedName = "java:jboss/datasources/SimpleAppDS" )
     private DataSource dataSource;
 
     @Produces
