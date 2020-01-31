@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.ozguryazilim.telve</groupId>
         <artifactId>telve-app-parent</artifactId>
-        <version>4.0.0-Beta-16</version>
+        <version>4.0.0-Beta-26</version>
     </parent>
 
 
@@ -77,7 +77,12 @@
                         </manifest>
                     </archive>
                 </configuration>
-            </plugin>
+	</plugin>
+	<plugin>
+          <groupId>org.sonarsource.scanner.maven</groupId>
+          <artifactId>sonar-maven-plugin</artifactId>
+          <version>3.6.0.1398</version>
+        </plugin>
         </plugins>
     </build>
 </project>
